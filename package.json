@@ -13,6 +13,7 @@
     "lint": "eslint --fix --config .config/eslint.mjs"
   },
   "dependencies": {
+    "@iconify-json/hugeicons": "^1.2.1",
     "@iconify-json/ph": "^1.2.1",
     "@nuxt/ui": "^2.18.7",
     "@nuxthub/core": "^0.7.36",
