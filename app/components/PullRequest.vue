@@ -1,15 +1,13 @@
 <script setup lang="ts">
-import type { Contributions } from '~~/types'
-
 defineProps<{
-  data: Contributions['prs'][number]
-}>()
+  data: Contributions["prs"][number];
+}>();
 
-function formatStars(stars: number) {
-  return new Intl.NumberFormat('en-US', {
-    notation: 'compact',
-    maximumFractionDigits: 1,
-  }).format(stars)
+function formatStars (stars: number) {
+  return new Intl.NumberFormat("en-US", {
+    notation: "compact",
+    maximumFractionDigits: 1
+  }).format(stars);
 }
 </script>
 

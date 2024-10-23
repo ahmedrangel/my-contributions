@@ -1,4 +1,5 @@
 {
+  "name": "prs.ahmedrangel.com",
   "type": "module",
   "private": true,
   "packageManager": "pnpm@9.12.1",
@@ -9,25 +10,21 @@
     "prepare": "nuxi prepare",
     "start": "node .output/server/index.mjs",
     "start:generate": "npx serve .output/public",
-    "lint": "eslint .",
-    "typecheck": "vue-tsc --noEmit"
+    "lint": "eslint --fix --config .config/eslint.mjs"
   },
   "dependencies": {
     "@iconify-json/ph": "^1.2.1",
     "@nuxt/ui": "^2.18.7",
-    "@nuxthub/core": "^0.7.31",
+    "@nuxthub/core": "^0.7.36",
     "@vueuse/core": "^11.1.0",
     "@vueuse/nuxt": "^11.1.0",
     "feed": "^4.2.2",
     "nuxt": "^3.13.2",
-    "octokit": "^4.0.2",
-    "vue": "^3.5.12",
-    "vue-router": "^4.4.5"
+    "octokit": "^4.0.2"
   },
   "devDependencies": {
     "@nuxt/eslint": "^0.6.0",
-    "eslint": "^9.12.0",
-    "vue-tsc": "^2.1.6",
-    "wrangler": "^3.80.4"
+    "eslint": "^9.13.0",
+    "wrangler": "^3.82.0"
   }
 }

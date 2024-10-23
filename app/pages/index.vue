@@ -1,43 +1,42 @@
 <script setup lang="ts">
-import type { Contributions } from '~~/types'
-
-const colorMode = useColorMode()
-const { data: contributions } = await useFetch<Contributions>('/api/contributions')
+const colorMode = useColorMode();
+const { data: contributions } = await useFetch<Contributions>("/api/contributions");
 
 if (!contributions.value) {
-  throw createError('Could not load User activity')
+  throw createError("Could not load User activity");
 }
 
-const { user, prs } = contributions.value
-const userUrl = `https://github.com/${user.username}`
+const { user, prs } = contributions.value;
+const userUrl = `https://github.com/${user.username}`;
 
 useHead({
   link: [
-    { rel: 'icon', href: '/favicon.png' },
-    { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
-    { rel: 'alternate', type: 'application/rss+xml', title: `${user.name}'s recent pull requests`, href: '/feed.xml' },
-  ],
-})
-const url = useRequestURL()
+    { rel: "icon", href: "/favicon.png" },
+    { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+    { rel: "alternate", type: "application/rss+xml", title: `${user.name}'s recent pull requests`, href: "/feed.xml" }
+  ]
+});
+const url = useRequestURL();
 useSeoMeta({
   title: `${user.name} is Contributing`,
   description: `Discover ${user.name} recent pull requests on GitHub.`,
   ogTitle: `${user.name} is Contributing`,
   ogDescription: `Discover ${user.name} recent pull requests on GitHub.`,
-  twitterCard: 'summary_large_image',
+  twitterCard: "summary_large_image",
   ogImage: `${url.origin}/og.png`,
-  twitterImage: `${url.origin}/og.png`,
-})
+  twitterImage: `${url.origin}/og.png`
+});
 </script>
 
 <template>
   <UContainer class="p-4 sm:p-6 lg:p-8 lg:pt-10 max-w-3xl">
     <div class="flex flex-col items-center gap-2">
-      <a :href="userUrl" target="_blank"><UAvatar
-        :src="user.avatar"
-        :alt="user.name"
-        size="xl"
-      />
+      <a :href="userUrl" target="_blank">
+        <UAvatar
+          :src="user.avatar"
+          :alt="user.name"
+          size="xl"
+        />
       </a>
       <h1 class="text-2xl sm:text-3xl text-center">
         <a :href="userUrl" target="_blank">
