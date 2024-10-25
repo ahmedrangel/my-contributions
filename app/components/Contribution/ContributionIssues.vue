@@ -10,7 +10,7 @@ function formatStars (stars: number) {
   }).format(stars);
 }
 
-function mapIcons (state: any) {
+function mapIcons (state: Issues["state"]) {
   switch (state) {
     case "open": return "i-octicon-issue-opened-24";
     case "completed": return "i-octicon-issue-closed-24";
