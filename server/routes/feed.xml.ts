@@ -4,7 +4,7 @@ import { getRequestURL } from "h3";
 
 export default defineEventHandler(async (event) => {
   const domain = getRequestURL(event).origin;
-  const { user, prs } = await $fetch < Contributions > ("/api/contributions");
+  const { user, prs, issues } = await $fetch < Contributions > ("/api/contributions");
   const feed = new Feed({
     title: `${user.name} is contributing...`,
     description: `Discover ${user.name}'s recent pull requests on GitHub`,
@@ -26,6 +26,16 @@ export default defineEventHandler(async (event) => {
       title: pr.title,
       image: `https://github.com/${pr.repo.split("/")[0]}.png`,
       description: `<a href="${pr.url}">${pr.title}</a>`
+    });
+  }
+
+  for (const issue of issues) {
+    feed.addItem({
+      link: issue.url,
+      date: new Date(issue.created_at),
+      title: issue.title,
+      image: `https://github.com/${issue.repo.split("/")[0]}.png`,
+      description: `<a href="${issue.url}">${issue.title}</a>`
     });
   }
 

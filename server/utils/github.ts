@@ -23,7 +23,7 @@ export const fetchRepo = defineCachedFunction(async (event: H3Event, owner: stri
 
   return data;
 }, {
-  maxAge: 60 * 10, // 10 minutes
+  maxAge: !import.meta.dev ? 60 * 20 : 1, // 20 minutes
   swr: true,
   group: "functions",
   name: "getRepoDetails",

@@ -18,8 +18,20 @@ declare global {
     stars: number;
   }
 
+  interface Issues {
+    repo: string;
+    title: string;
+    url: string;
+    created_at: string;
+    state: "open" | "completed" | "not-planned";
+    number: number;
+    type: "User" | "Organization";
+    stars: number;
+  }
+
   interface Contributions {
     user: User;
     prs: PullRequest[];
+    issues: Issues[];
   }
 }

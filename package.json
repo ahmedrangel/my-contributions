@@ -1,5 +1,5 @@
 {
-  "name": "prs.ahmedrangel.com",
+  "name": "my-contributions",
   "type": "module",
   "private": true,
   "packageManager": "pnpm@9.12.1",
@@ -14,9 +14,10 @@
   },
   "dependencies": {
     "@iconify-json/hugeicons": "^1.2.1",
+    "@iconify-json/octicon": "^1.2.1",
     "@iconify-json/ph": "^1.2.1",
     "@nuxt/ui": "^2.18.7",
-    "@nuxthub/core": "^0.7.36",
+    "@nuxthub/core": "^0.7.37",
     "@vueuse/core": "^11.1.0",
     "@vueuse/nuxt": "^11.1.0",
     "feed": "^4.2.2",
@@ -26,6 +27,6 @@
   "devDependencies": {
     "@nuxt/eslint": "^0.6.0",
     "eslint": "^9.13.0",
-    "wrangler": "^3.82.0"
+    "wrangler": "^3.83.0"
   }
 }
