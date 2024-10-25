@@ -2,7 +2,7 @@
 
 Create a website with an RSS feed of your recent GitHub pull requests and issues across the Open Source projects you contribute to.
 
-![atinux-pull-requests](https://github.com/user-attachments/assets/cfa82cc2-51af-4fd4-9012-1f8517dd370f)
+![ahmedrangel-my-contributions](https://github.com/user-attachments/assets/99547830-88d3-47cc-9c6a-cea5730a6e9b)
 
 Demo: https://contribs.ahmedrangel.com
 
