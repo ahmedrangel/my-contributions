@@ -80,7 +80,7 @@ useSeoMeta({
           variant="link"
         />
       </div>
-      <UDivider class="mt-2 sm:mt-6 mb-6 sm:mb-10 w-1/2 mx-auto animate-pulse" />
+      <UDivider class="sm:mt-6 mb-6 w-1/2 mx-auto animate-pulse" />
     </div>
 
     <UTabs :items="[{ key: 'prs', label: 'Pull Requests' }, { key: 'iss', label: 'Issues' }]">
