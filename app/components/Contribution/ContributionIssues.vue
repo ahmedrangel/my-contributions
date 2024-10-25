@@ -44,7 +44,7 @@ function mapIcons (state: Issues["state"]) {
             class="size-4 sm:size-5 shrink-0"
           />
 
-          <span class="truncate">{{ data.title }}</span>
+          <span class="truncate font-semibold">{{ data.title }}</span>
         </a>
 
         <div class="flex gap-2 items-bottom">
