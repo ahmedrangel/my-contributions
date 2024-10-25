@@ -7,26 +7,22 @@ declare global {
     avatar: string;
   }
 
-  interface PullRequest {
+  interface ContributionData {
     repo: string;
     title: string;
     url: string;
     created_at: string;
-    state: "merged" | "draft" | "open" | "closed";
     number: number;
     type: "User" | "Organization";
     stars: number;
   }
 
-  interface Issues {
-    repo: string;
-    title: string;
-    url: string;
-    created_at: string;
+  interface PullRequest extends ContributionData {
+    state: "merged" | "draft" | "open" | "closed";
+  }
+
+  interface Issues extends ContributionData {
     state: "open" | "completed" | "not-planned";
-    number: number;
-    type: "User" | "Organization";
-    stars: number;
   }
 
   interface Contributions {
