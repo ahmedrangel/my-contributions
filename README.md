@@ -1,19 +1,16 @@
 # Showcase your Open Source Contributions 🤍
 
-Create a website with an RSS feed of your recent GitHub pull requests across the Open Source projects you contribute to.
+Create a website with an RSS feed of your recent GitHub pull requests and issues across the Open Source projects you contribute to.
 
 ![atinux-pull-requests](https://github.com/user-attachments/assets/cfa82cc2-51af-4fd4-9012-1f8517dd370f)
 
-Demo: https://prs.atinux.com
-
-[![Deploy to NuxtHub](https://hub.nuxt.com/button.svg)](https://hub.nuxt.com/new?template=my-pull-requests)
+Demo: https://contribs.ahmedrangel.com
 
 ## Features
 
-- List the 50 most recent pull requests you've contributed to.
+- List the 50 most recent pull requests and issues you've contributed to.
 - RSS feed
 - Only add your GitHub token to get started
-- One click deploy on 275+ locations for free
 
 ## Setup
 
@@ -65,7 +62,7 @@ You can also deploy using [Cloudflare Pages CI](https://hub.nuxt.com/docs/gettin
 
 ## Credits
 
-This project is inspired by [Anthony Fu](https://github.com/antfu)'s [releases.antfu.me](https://github.com/antfu/releases.antfu.me) project.
+This project is inspired by [Atinux](https://github.com/atinux)'s [my-pull-requests](https://github.com/atinux/my-pull-requests) project.
 
 ## License
 
