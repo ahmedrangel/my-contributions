@@ -7,7 +7,7 @@ export default defineEventHandler(async (event) => {
   const { user, prs, issues } = await $fetch < Contributions > ("/api/contributions");
   const feed = new Feed({
     title: `${user.name} is contributing...`,
-    description: `Discover ${user.name}'s recent pull requests on GitHub`,
+    description: `Discover ${user.name}'s recent contributions on GitHub`,
     id: domain,
     link: domain,
     language: "en",
@@ -19,23 +19,17 @@ export default defineEventHandler(async (event) => {
     }
   });
 
-  for (const pr of prs) {
-    feed.addItem({
-      link: pr.url,
-      date: new Date(pr.created_at),
-      title: pr.title,
-      image: `https://github.com/${pr.repo.split("/")[0]}.png`,
-      description: `<a href="${pr.url}">${pr.title}</a>`
-    });
-  }
+  const feedArray = [...prs, ...issues]
+    .toSorted((a, b) => Number(new Date(b.created_at)) - Number(new Date(a.created_at)));
 
-  for (const issue of issues) {
+  for (const contrib of feedArray) {
+    const contributionType = contrib.url.includes("/pull/") ? "PR" : "Issue";
     feed.addItem({
-      link: issue.url,
-      date: new Date(issue.created_at),
-      title: issue.title,
-      image: `https://github.com/${issue.repo.split("/")[0]}.png`,
-      description: `<a href="${issue.url}">${issue.title}</a>`
+      link: contrib.url,
+      date: new Date(contrib.created_at),
+      title: `${contributionType} · ${contrib.title}`,
+      image: `https://github.com/${contrib.repo.split("/")[0]}.png`,
+      description: `<a href="${contrib.url}">${contrib.title}</a>`
     });
   }
 
