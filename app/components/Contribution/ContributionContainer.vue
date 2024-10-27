@@ -1,13 +1,13 @@
 <script setup lang="ts">
 defineProps<{
-  data: Contributions["issues" | "prs"][number];
-}>();
+  data: Contributions['issues' | 'prs'][number]
+}>()
 
-function formatStars (stars: number) {
-  return new Intl.NumberFormat("en-US", {
-    notation: "compact",
-    maximumFractionDigits: 1
-  }).format(stars);
+function formatStars(stars: number) {
+  return new Intl.NumberFormat('en-US', {
+    notation: 'compact',
+    maximumFractionDigits: 1,
+  }).format(stars)
 }
 </script>
 

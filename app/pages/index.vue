@@ -1,30 +1,30 @@
 <script setup lang="ts">
-const colorMode = useColorMode();
-const { data: contributions } = await useFetch<Contributions>("/api/contributions");
+const colorMode = useColorMode()
+const { data: contributions } = await useFetch<Contributions>('/api/contributions')
 if (!contributions.value) {
-  throw createError("Could not load User activity");
+  throw createError('Could not load User activity')
 }
 
-const { user, prs, issues } = contributions.value;
-const userUrl = `https://github.com/${user.username}`;
+const { user, prs, issues } = contributions.value
+const userUrl = `https://github.com/${user.username}`
 
 useHead({
   link: [
-    { rel: "icon", href: "/favicon.png" },
-    { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
-    { rel: "alternate", type: "application/rss+xml", title: `${user.name}'s recent contributions`, href: "/feed.xml" }
-  ]
-});
-const url = useRequestURL();
+    { rel: 'icon', href: '/favicon.png' },
+    { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+    { rel: 'alternate', type: 'application/rss+xml', title: `${user.name}'s recent contributions`, href: '/feed.xml' },
+  ],
+})
+const url = useRequestURL()
 useSeoMeta({
   title: `${user.name} is Contributing`,
   description: `Discover ${user.name} recent contributions on GitHub.`,
   ogTitle: `${user.name} is Contributing`,
   ogDescription: `Discover ${user.name} recent contributions on GitHub.`,
-  twitterCard: "summary_large_image",
+  twitterCard: 'summary_large_image',
   ogImage: `${url.origin}/og.png`,
-  twitterImage: `${url.origin}/og.png`
-});
+  twitterImage: `${url.origin}/og.png`,
+})
 </script>
 
 <template>

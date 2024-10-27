@@ -1,15 +1,15 @@
 <script setup lang="ts">
 defineProps<{
-  data: Contributions["prs"][number];
-}>();
+  data: Contributions['prs'][number]
+}>()
 
-function mapIcons (state: PullRequest["state"]) {
+function mapIcons(state: PullRequest['state']) {
   switch (state) {
-    case "open": return "i-ph-git-pull-request-duotone";
-    case "merged": return "i-ph-git-merge-duotone";
-    case "draft": return "i-hugeicons-git-pull-request-draft";
-    case "closed": return "i-hugeicons-git-pull-request-closed";
-    default: return "i-ph-git-pull-request-duotone";
+    case 'open': return 'i-ph-git-pull-request-duotone'
+    case 'merged': return 'i-ph-git-merge-duotone'
+    case 'draft': return 'i-hugeicons-git-pull-request-draft'
+    case 'closed': return 'i-hugeicons-git-pull-request-closed'
+    default: return 'i-ph-git-pull-request-duotone'
   }
 }
 </script>

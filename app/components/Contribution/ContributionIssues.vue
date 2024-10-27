@@ -1,14 +1,14 @@
 <script setup lang="ts">
 defineProps<{
-  data: Contributions["issues"][number];
-}>();
+  data: Contributions['issues'][number]
+}>()
 
-function mapIcons (state: Issues["state"]) {
+function mapIcons(state: Issues['state']) {
   switch (state) {
-    case "open": return "i-octicon-issue-opened-24";
-    case "completed": return "i-octicon-issue-closed-24";
-    case "not-planned": return "i-octicon-skip-24";
-    default: return "i-octicon-issue-opened-24";
+    case 'open': return 'i-octicon-issue-opened-24'
+    case 'completed': return 'i-octicon-issue-closed-24'
+    case 'not-planned': return 'i-octicon-skip-24'
+    default: return 'i-octicon-issue-opened-24'
   }
 }
 </script>
