@@ -36,7 +36,7 @@ function formatStars(stars: number) {
             <span class="truncate">{{ data.repo.split('/')[1] }}</span>
           </a>
           <a :href="`https://github.com/${data.repo}`" target="_blank" class="items-center hidden sm:inline-flex gap-0.5 hover:text-black dark:hover:text-white truncate">
-            <UIcon name="i-ph-star" class="size-3 shrink-0" />
+            <UIcon name="i-octicon-star-24" class="size-3 shrink-0" />
             <span class="text-xs text-gray-500 dark:text-gray-400">{{ formatStars(data.stars) }}</span>
           </a>
         </div>

@@ -5,11 +5,11 @@ defineProps<{
 
 function mapIcons(state: PullRequest['state']) {
   switch (state) {
-    case 'open': return 'i-ph-git-pull-request-duotone'
-    case 'merged': return 'i-ph-git-merge-duotone'
-    case 'draft': return 'i-hugeicons-git-pull-request-draft'
-    case 'closed': return 'i-hugeicons-git-pull-request-closed'
-    default: return 'i-ph-git-pull-request-duotone'
+    case 'open': return 'i-octicon-git-pull-request-24'
+    case 'merged': return 'i-octicon-git-merge-24'
+    case 'draft': return 'i-octicon-git-pull-request-draft-24'
+    case 'closed': return 'i-octicon-git-pull-request-closed-24'
+    default: return 'i-octicon-git-pull-request-24'
   }
 }
 </script>

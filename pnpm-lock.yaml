@@ -8,9 +8,6 @@ importers:
 
   .:
     dependencies:
-      '@iconify-json/hugeicons':
-        specifier: ^1.2.1
-        version: 1.2.1
       '@iconify-json/octicon':
         specifier: ^1.2.1
         version: 1.2.1
@@ -1067,9 +1064,6 @@ packages:
 
   '@iconify-json/heroicons@1.2.1':
     resolution: {integrity: sha512-TkKfS5U27kE5MXmSGLzPoz95BP5VA9xEJXwJFwmPMVLX+xyWq0OkoiWTUXB0uAoQODpb8BaRpzSydItrq9fIRA==}
-
-  '@iconify-json/hugeicons@1.2.1':
-    resolution: {integrity: sha512-IedWO3xgMuRdRaolyl8kLOMA01xQ2QhldCKWrqtIxEpalndU7hoh1dUR00ackhWLFDwpKdGQGzuF5/Szaw40CQ==}
 
   '@iconify-json/octicon@1.2.1':
     resolution: {integrity: sha512-4w7yMipQtp6s6aCHrSVlVXsf0OCBQ8CRmUTkMQUBexR42SXl4z5GnaUyaOMVoZttfgaBNnj0mlMB5T1cmRDgTg==}
@@ -5700,10 +5694,6 @@ snapshots:
   '@humanwhocodes/retry@0.3.1': {}
 
   '@iconify-json/heroicons@1.2.1':
-    dependencies:
-      '@iconify/types': 2.0.0
-
-  '@iconify-json/hugeicons@1.2.1':
     dependencies:
       '@iconify/types': 2.0.0
 
