@@ -5,6 +5,14 @@ export default defineNuxtConfig({
   // https://nuxt.com/docs/getting-started/upgrade#testing-nuxt-4
   future: { compatibilityVersion: 4 },
 
+  app: {
+    head: {
+      link: [
+        { rel: 'preconnect', href: 'https://avatars.githubusercontent.com' },
+      ],
+    },
+  },
+
   // https://nuxt.com/modules
   modules: [
     '@nuxthub/core',
@@ -29,4 +37,8 @@ export default defineNuxtConfig({
 
   // https://devtools.nuxt.com
   devtools: { enabled: true },
+
+  features: {
+    inlineStyles: false,
+  },
 })
