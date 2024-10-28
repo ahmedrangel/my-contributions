@@ -39,6 +39,10 @@ function formatStars(stars: number) {
             <UIcon name="i-octicon-star-24" class="size-3 shrink-0" />
             <span class="text-xs text-gray-500 dark:text-gray-400">{{ formatStars(data.stars) }}</span>
           </a>
+          <a :href="data.url" target="_blank" class="items-center hidden sm:inline-flex gap-0.5 hover:text-black dark:hover:text-white truncate">
+            <UIcon name="i-octicon-comment-24" class="size-3 shrink-0" />
+            <span class="text-xs text-gray-500 dark:text-gray-400">{{ data.comments }}</span>
+          </a>
         </div>
       </div>
 

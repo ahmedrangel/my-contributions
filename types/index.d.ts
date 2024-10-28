@@ -15,6 +15,7 @@ declare global {
     number: number
     type: 'User' | 'Organization'
     stars: number
+    comments: number
   }
 
   interface PullRequest extends ContributionData {

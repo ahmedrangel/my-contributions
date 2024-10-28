@@ -52,6 +52,7 @@ export default defineCachedEventHandler(async (event) => {
       number: pr.number,
       type: repo.owner.type,
       stars: repo.stargazers_count,
+      comments: pr.comments,
     })
   }
 
@@ -68,6 +69,7 @@ export default defineCachedEventHandler(async (event) => {
       number: issue.number,
       type: repo.owner.type,
       stars: repo.stargazers_count,
+      comments: issue.comments,
     })
   }
 
