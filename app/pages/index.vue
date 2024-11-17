@@ -8,6 +8,9 @@ if (!contributions.value) {
 const { user, prs, issues } = contributions.value
 const userUrl = `https://github.com/${user.username}`
 
+const items = [{ key: 'prs', label: 'Pull Requests' }, { key: 'iss', label: 'Issues' }]
+const itemsIndex = ref(0)
+
 useHead({
   link: [
     { rel: 'icon', href: '/favicon.png' },
@@ -84,18 +87,34 @@ useSeoMeta({
         <UDivider class="sm:mt-6 mb-6 w-1/2 mx-auto animate-pulse" />
       </div>
 
-      <UTabs :items="[{ key: 'prs', label: 'Pull Requests' }, { key: 'iss', label: 'Issues' }]">
-        <template #item="{ item }">
-          <div class="mt-6">
-            <div v-if="item.key === 'prs'" class="flex flex-col gap-6 sm:gap-6">
-              <ContributionPullRequest v-for="pr of prs" :key="pr.url" :data="pr" />
-            </div>
-            <div v-if="item.key === 'iss'" class="flex flex-col gap-6 sm:gap-6">
-              <ContributionIssues v-for="issue of issues" :key="issue.url" :data="issue" />
-            </div>
+      <UTabs v-model="itemsIndex" :items="items" />
+      <div class="mt-6 overflow-hidden relative">
+        <TransitionGroup name="fade">
+          <div v-if="items[itemsIndex]?.key === 'prs'" class="flex flex-col gap-6 sm:gap-6">
+            <ContributionPullRequest v-for="pr of prs" :key="pr.url" :data="pr" />
           </div>
-        </template>
-      </UTabs>
+          <div v-else class="flex flex-col gap-6 sm:gap-6">
+            <ContributionIssues v-for="issue of issues" :key="issue.url" :data="issue" />
+          </div>
+        </TransitionGroup>
+      </div>
     </UContainer>
   </main>
 </template>
+
+<style scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity .3s ease
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.fade-leave-active {
+  position: absolute;
+  width: 100%;
+}
+</style>
