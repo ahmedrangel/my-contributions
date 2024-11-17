@@ -31,17 +31,17 @@ useSeoMeta({
   <main>
     <UContainer class="p-4 sm:p-6 lg:p-8 lg:pt-10 max-w-3xl">
       <div class="flex flex-col items-center gap-2">
-        <a :href="userUrl" target="_blank">
+        <NuxtLink :to="userUrl" target="_blank">
           <UAvatar
             :src="user.avatar"
             :alt="user.name"
             size="xl"
           />
-        </a>
+        </NuxtLink>
         <h1 class="text-2xl sm:text-3xl text-center">
-          <a :href="userUrl" target="_blank">
+          <NuxtLink :to="userUrl" target="_blank">
             {{ user.name }}
-          </a>
+          </NuxtLink>
           is <span class="animate-pulse">Contributing...</span>
         </h1>
         <p class="text-center text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300">
