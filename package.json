@@ -24,8 +24,8 @@
     "octokit": "^4.0.2"
   },
   "devDependencies": {
-    "@nuxt/eslint": "^0.7.0",
+    "@nuxt/eslint": "^0.7.1",
     "eslint": "^9.15.0",
-    "wrangler": "^3.87.0"
+    "wrangler": "^3.88.0"
   }
 }
