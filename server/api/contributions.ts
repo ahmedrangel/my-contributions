@@ -73,6 +73,9 @@ export default defineCachedEventHandler(async (event) => {
     })
   }
 
+  event.node.res.setHeader('Access-Control-Allow-Origin', '*')
+  event.node.res.setHeader('Access-Control-Allow-Methods', 'GET')
+
   return {
     user,
     prs,
