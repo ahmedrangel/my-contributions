@@ -34,7 +34,8 @@ export default defineCachedEventHandler(async (event) => {
   })
 
   // Filter out closed PRs that are not merged
-  const filteredPrs = prData.data.items.filter(pr => !(pr.state === 'closed' && !pr.pull_request?.merged_at))
+  const filteredPrs = prData.data.items
+  // .filter(pr => !(pr.state === 'closed' && !pr.pull_request?.merged_at))
   const prs: PullRequest[] = []
   const issues: Issues[] = []
 
