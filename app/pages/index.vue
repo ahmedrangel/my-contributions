@@ -9,7 +9,7 @@ const { user, prs, issues } = contributions.value
 const userUrl = `https://github.com/${user.username}`
 
 const items = [{ key: 'prs', label: 'Pull Requests' }, { key: 'iss', label: 'Issues' }]
-const itemsIndex = ref(0)
+const itemsIndex = ref('0')
 
 useHead({
   link: [
@@ -38,7 +38,7 @@ useSeoMeta({
           <UAvatar
             :src="user.avatar"
             :alt="user.name"
-            size="xl"
+            size="3xl"
           />
         </NuxtLink>
         <h1 class="text-2xl sm:text-3xl text-center">
@@ -57,7 +57,7 @@ useSeoMeta({
             <UButton
               :aria-label="`${user.name}'s GitHub profile`"
               :icon="colorMode.value === 'dark' ? 'i-ph-moon-stars-duotone' : 'i-ph-sun-duotone'"
-              color="gray"
+              color="neutral"
               variant="link"
               @click="colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark'"
             />
@@ -71,7 +71,7 @@ useSeoMeta({
             target="_blank"
             :aria-label="`${user.name}'s GitHub profile`"
             icon="i-ph-github-logo-duotone"
-            color="gray"
+            color="neutral"
             variant="link"
           />
           <UButton
@@ -80,17 +80,17 @@ useSeoMeta({
             target="_blank"
             aria-label="RSS Feed"
             icon="i-ph-rss-simple-duotone"
-            color="gray"
+            color="neutral"
             variant="link"
           />
         </div>
-        <UDivider class="sm:mt-6 mb-6 w-1/2 mx-auto animate-pulse" />
+        <USeparator class="sm:mt-6 mb-6 w-1/2 mx-auto animate-pulse" />
       </div>
 
-      <UTabs v-model="itemsIndex" :items="items" />
+      <UTabs v-model="itemsIndex" :items="items" color="neutral" />
       <div class="mt-6 overflow-hidden relative">
         <TransitionGroup name="fade">
-          <div v-if="items[itemsIndex]?.key === 'prs'" class="flex flex-col gap-6 sm:gap-6">
+          <div v-if="items[Number(itemsIndex)]?.key === 'prs'" class="flex flex-col gap-6 sm:gap-6">
             <ContributionPullRequest v-for="pr of prs" :key="pr.url" :data="pr" />
           </div>
           <div v-else class="flex flex-col gap-6 sm:gap-6">
